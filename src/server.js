@@ -13,7 +13,7 @@ const MONGO_USER = process.env.MONGO_USER;
 const MONGO_PASS = process.env.MONGO_PASS;
 const DB_NAME = process.env.DB_NAME;
 
-const app = express();
+
 const PORT = process.env.PORT || 8080;
 const MODO = process.env.MODO || "fork";
 const nroCPUs = os.cpus().length;
@@ -29,6 +29,7 @@ if (cluster.isPrimary && MODO === "cluster") {
     console.log(`worker ${worker.process.pid} died`);
   });
 } else {
+  const app = express();
   app.use(morgan("dev"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
