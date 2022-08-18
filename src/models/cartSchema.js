@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const cartSchema = new mongoose.Schema({
+export const CartSchema = new mongoose.Schema({
   products: [
     {
       product: {

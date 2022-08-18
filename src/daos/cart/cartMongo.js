@@ -1,9 +1,9 @@
 import MongoClass from "../../containers/containerMongo.js";
-import { cartSchema } from "../../models/cartSchema.js";
+import { CartSchema } from "../../models/cartSchema.js";
 
 export class MongoCart extends MongoClass {
   constructor() {
-    super("carts", cartSchema);
+    super("carts", CartSchema);
   }
 
   async addProductos(cart, products) {

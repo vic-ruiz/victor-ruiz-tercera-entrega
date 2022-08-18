@@ -1,9 +1,9 @@
 import MongoClass from "../../containers/containerMongo.js";
-import { usersSchema } from "../../models/usersSchema.js";
+import { UsersSchema } from "../../models/usersSchema.js";
 
 export class MongoUsers extends MongoClass {
   constructor() {
-    super("users", usersSchema);
+    super("users", UsersSchema);
   }
   async findByEmail(email) {
     try {
