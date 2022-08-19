@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const messageSchema = new mongoose.Schema({
+export const MessageSchema = new mongoose.Schema({
     texto: {
         type: String,
         required: true
@@ -11,7 +11,7 @@ export const messageSchema = new mongoose.Schema({
     },
     autor: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "usuarios"
+        ref: "users"
     }
 
   });

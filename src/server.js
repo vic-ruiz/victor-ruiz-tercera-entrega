@@ -9,9 +9,6 @@ import indexRouter from "./routes/indexRoutes.js";
 import cluster from "cluster";
 import os from "os";
 
-const MONGO_USER = process.env.MONGO_USER;
-const MONGO_PASS = process.env.MONGO_PASS;
-const DB_NAME = process.env.DB_NAME;
 
 
 const PORT = process.env.PORT || 8080;
@@ -39,7 +36,7 @@ if (cluster.isPrimary && MODO === "cluster") {
       resave: true,
       saveUninitialized: true,
       store: MongoStore.create({
-        mongoUrl: `mongodb+srv://${MONGO_USER}:${MONGO_PASS}@cluster0.lcwk4.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`,
+        mongoUrl: process.env.MONGO_PASS,
         ttl: 60 * 10,
       }),
     })
