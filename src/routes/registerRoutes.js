@@ -11,7 +11,7 @@ registerRouter.post(
   "/",
   passport.authenticate("register", {
     failureRedirect: "/register/registerFailure",
-    successRedirect: "/index",
+    successRedirect: "/mailConfirmation/register",
   })
 );
 
