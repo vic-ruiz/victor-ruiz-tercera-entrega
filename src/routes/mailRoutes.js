@@ -15,7 +15,7 @@ mailRouter.get('/register', async (req,res)=>{
         const user = await api.getOne(req.session.passport.user)
 
         let name = user.name
-        let lastName = user.apellido
+        let lastName = user.lastName
         let email = user.email
 
         let htmlTemplate = `
